@@ -29,6 +29,12 @@ flyctl auth signup
 flyctl launch
 ```
 
+4. Setup your environment variables
+    - DATABASE_URL
+    - GITHUB_CLIENT_ID
+    - GITHUB_SECRET_KEY
+
+
 ## Development
 
 From your terminal:
