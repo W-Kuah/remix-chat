@@ -1,4 +1,6 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
+import { Form } from "@remix-run/react";
+import { authenticator } from "~/services/auth.server";
 
 export const meta: MetaFunction = () => {
   return [
@@ -7,35 +9,30 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+
+export async function loader({request}: LoaderFunctionArgs) {
+  return await authenticator.isAuthenticated(request, {
+    successRedirect: '/chat'
+  })
+}
+
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+    <div className="max-w-xl mx-auto border rounded-lg p-10 mt-32">
+      <h1 className="text-4xl font-semibold text-center">
+        Login in to use chat!
+      </h1>
+
+      <Form method="POST" action="/auth/github" className="mt-8">
+        <button
+          type="submit"
+          className="w-full flex items-center justify center gap-2 rounded-lg bg-orange-500 px-8 py-3 text-center text-sm font-semibold text-white
+          outline-none ring-orange-300 transition duration-100 hover:bg-orange-600"
+        >
+          Login with github
+        </button>
+
+      </Form>
     </div>
   );
 }

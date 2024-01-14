@@ -1,6 +1,17 @@
-# Welcome to Remix!
+# Full Stack Realtime Chat Messaging App with Remix.run
 
-- [Remix Docs](https://remix.run/docs)
+
+### Commands you will need
+```sh
+npm i remix-utils remix-auth-socials remix-auth @prisma/client
+```
+
+```sh
+npm i -D prisma
+```
+
+
+
 
 ## Fly Setup
 
