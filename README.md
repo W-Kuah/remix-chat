@@ -45,6 +45,10 @@ npm run dev
 
 This starts your app in development mode, rebuilding assets on file changes.
 
+NOTE:
+If there is there is this error - `ERROR HY000 (1105)`
+Please contact me to 'wake up' the database. Database needs be query every 7 days to prevent sleep mode.
+
 ## Deployment
 
 If you've followed the setup instructions already, all you need to do is run this:
