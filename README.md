@@ -30,8 +30,8 @@ flyctl launch
 ```
 
 4. Setup your environment variables
-    - DATABASE_URL
-    - GITHUB_CLIENT_ID
+    - DATABASE_URL (Choose a database. Personally I went for Supabase)
+    - GITHUB_CLIENT_ID (Register a new OAuth application in git GitHub and use 'http://localhost:3000/' for the Homepage URL, abd use 'https://localhost:3000/auth/github/callback' as the Authorization callback URL.)
     - GITHUB_SECRET_KEY
 
 
@@ -44,10 +44,6 @@ npm run dev
 ```
 
 This starts your app in development mode, rebuilding assets on file changes.
-
-NOTE:
-If there is there is this error - `ERROR HY000 (1105)`
-Please contact me to 'wake up' the database. Database needs be query every 7 days to prevent sleep mode.
 
 ## Deployment
 
