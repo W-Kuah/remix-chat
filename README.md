@@ -31,7 +31,7 @@ flyctl launch
 
 4. Setup your environment variables
     - DATABASE_URL (Choose a database. Personally I went for Supabase)
-    - GITHUB_CLIENT_ID (Register a new OAuth application in git GitHub and use 'http://localhost:3000/' for the Homepage URL, abd use 'https://localhost:3000/auth/github/callback' as the Authorization callback URL.)
+    - GITHUB_CLIENT_ID (Register a new OAuth application in git GitHub and use 'http://localhost:3000/' for the Homepage URL, and use 'https://localhost:3000/auth/github/callback' as the Authorization callback URL.)
     - GITHUB_SECRET_KEY
 
 
